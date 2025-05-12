@@ -2,7 +2,9 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>İletişim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim Formu</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>İletişim</h1>
@@ -10,15 +12,15 @@
     <a href="index.html">Anasayfa</a>
   </nav>
 
-  <form>
+  <form id="contactForm" action="tablo.html" method="GET">
     <label>Adınız:</label><br>
-    <input type="text" name="ad"><br><br>
+    <input type="text" name="ad" required><br><br>
 
     <label>E-posta:</label><br>
-    <input type="email" name="email"><br><br>
+    <input type="email" name="email" required><br><br>
 
     <label>Mesajınız:</label><br>
-    <textarea name="mesaj" rows="4" cols="40"></textarea><br><br>
+    <textarea name="mesaj" rows="4" cols="40" required></textarea><br><br>
 
     <input type="submit" value="Gönder">
   </form>
