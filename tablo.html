@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gönderilen Bilgiler</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>Gönderilen Bilgiler</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Ad</th>
+        <th>E-posta</th>
+        <th>Mesaj</th>
+      </tr>
+    </thead>
+    <tbody id="dataTable">
+      <!-- Dinamik olarak eklenecek veriler buraya gelecek -->
+    </tbody>
+  </table>
+
+  <script>
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const ad = params.get('ad');
+      const email = params.get('email');
+      const mesaj = params.get('mesaj');
+
+      if (ad && email && mesaj) {
+        const tableBody = document.getElementById('dataTable');
+        const row = tableBody.insertRow();
+
+        const cellAd = row.insertCell(0);
+        const cellEmail = row.insertCell(1);
+        const cellMesaj = row.insertCell(2);
+
+        cellAd.textContent = ad;
+        cellEmail.textContent = email;
+        cellMesaj.textContent = mesaj;
+      }
+    };
+  </script>
+</body>
+</html>
+
